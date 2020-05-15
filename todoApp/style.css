@@ -59,6 +59,21 @@ section {
     border-radius: 2px;
 }
 
+.msg {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.msg>h4 {
+    color: #c1c1c1;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+
 .content {
     height: 50vh;
     overflow-y: auto;

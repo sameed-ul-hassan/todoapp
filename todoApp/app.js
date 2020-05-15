@@ -11,6 +11,7 @@ let todoForm = document.querySelector(".todoForm");
 let modalAddBtn = document.querySelector(".modalAddBtn");
 let modalCancelBtn = document.querySelector(".modalCancelBtn");
 let todoValue = document.querySelector("#todoValue");
+let msg = document.querySelector(".msg");
 
 /***************************Events*******************
  *****************************************************/
@@ -29,6 +30,10 @@ window.onload = function() {
         completeTodos.forEach(function(item) {
             createHtmlStructure(item, "completedTodo");
         });
+    }
+
+    if (completeTodos.length > 0 || savedTodos.length > 0) {
+        msg.style.display = "none";
     }
 };
 // Filters click Event
@@ -74,6 +79,7 @@ modalAddBtn.addEventListener("click", function(e) {
         createHtmlStructure(todoValue.value);
     }
     todoValue.value = "";
+    msg.style.display = "none";
     Object.assign(todoForm.style, { bottom: "-22%" });
 });
 
@@ -108,12 +114,17 @@ document.querySelector("body").addEventListener("click", function(e) {
             localStorage.setItem("ctodo", JSON.stringify(cTodo));
             deleteTodoText.parentNode.remove();
         } else {
-            console.log("sad");
             let aTodo = JSON.parse(localStorage.getItem("todo"));
             let delIndex = aTodo.indexOf(deleteTodoText.innerText);
             aTodo.splice(delIndex, 1);
             localStorage.setItem("todo", JSON.stringify(aTodo));
             deleteTodoText.parentNode.remove();
+        }
+
+        let allTodoArr = JSON.parse(localStorage.getItem("todo"));
+        let comTodoArr = JSON.parse(localStorage.getItem("ctodo"));
+        if (allTodoArr.length == 0 && comTodoArr.length == 0) {
+            msg.style.display = "flex";
         }
     }
 });
