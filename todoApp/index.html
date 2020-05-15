@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="header">
+                Todo App
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="active all">All</li>
+                    <li class="completed">Completed</li>
+                    <li class="incompleted">Incompleted</li>
+                </ul>
+            </div>
+            <div class="content"></div>
+            <div class="addTodo">
+                +
+            </div>
+        </section>
+        <section class="todoForm">
+            <form>
+                <div class="inputBox">
+                    <label for="">Add Todo</label>
+                    <input type="text" id="todoValue" />
+                </div>
+                <div class="modalBtn">
+                    <button class="modalAddBtn">Add</button>
+                    <button class="modalCancelBtn">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
